@@ -73,4 +73,8 @@ public class Process implements Observable {
     public ProcessState getProcessState() {
         return processState;
     }
+
+    public void setWaitingTime(Integer waitingTime) {
+        this.waitingTime = waitingTime;
+    }
 }

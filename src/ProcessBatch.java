@@ -28,7 +28,17 @@ public class ProcessBatch {
             processes.add(process);
             process.notifyObservers();
         }
-
     }
 
+    public void determineWaitingTime() {
+
+        for (int i = 0; i < processes.size(); i++) {
+            if (processes.get(0).equals(processes.get(i))) {
+                processes.get(i).setWaitingTime(0); // since it is the first one
+            } else {
+                processes.get(i).setWaitingTime(processes.get(i-1).getBurstTime() + processes.get(i-1).getWaitingTime());
+                // previous process' waiting time + burst time is the current process' waiting time
+            }
+        }
+    }
 }
