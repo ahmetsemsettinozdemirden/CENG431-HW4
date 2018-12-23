@@ -1,3 +1,4 @@
+import process.Process;
 import scheduling.SchedulingAlgorithm;
 
 import java.util.ArrayList;

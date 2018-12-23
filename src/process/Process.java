@@ -3,6 +3,7 @@ package process;
 import process.stateobserver.Observer;
 
 import java.util.List;
+import java.util.Random;
 
 public class Process implements Observable {
 
@@ -39,5 +40,33 @@ public class Process implements Observable {
     public void notifyObservers() {
         for (Observer observer: observers)
             observer.update(this);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public int getBurstTime() {
+        return burstTime;
+    }
+
+    public int getCompletionTime() {
+        return completionTime;
+    }
+
+    public int getWaitingTime() {
+        return waitingTime;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public ProcessState getProcessState() {
+        return processState;
     }
 }
