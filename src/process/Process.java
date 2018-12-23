@@ -6,16 +6,16 @@ import java.util.List;
 
 public class Process implements Observable {
 
-    private int id;
-    private int arrivalTime;
-    private int burstTime;
-    private int completionTime;
-    private int waitingTime;
-    private int priority;
+    private Integer id;
+    private Integer arrivalTime;
+    private Integer burstTime;
+    private Integer completionTime;
+    private Integer waitingTime;
+    private Integer priority;
     private ProcessState processState;
     private List<Observer> observers;
 
-    public Process(int id, int arrivalTime, int burstTime, int completionTime, int waitingTime, int priority, ProcessState processState) {
+    public Process(Integer id, Integer arrivalTime, Integer burstTime, Integer completionTime, Integer waitingTime, Integer priority, ProcessState processState) {
         this.id = id;
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
@@ -39,5 +39,10 @@ public class Process implements Observable {
     public void notifyObservers() {
         for (Observer observer: observers)
             observer.update(this);
+    }
+
+    @Override
+    public void setState(ProcessState processState) {
+        this.processState = processState;
     }
 }
