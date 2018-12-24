@@ -28,6 +28,8 @@ public class ProcessManagementApplication {
             dispatcher.dispatch();
         }
 
+        for (Process process: processBatch.getProcesses())
+            System.out.println("after cpu" + process);
     }
 
 }

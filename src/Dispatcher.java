@@ -30,6 +30,8 @@ public class Dispatcher {
         for (Process process: processes)
             if (process.getProcessState().equals(ProcessState.READY))
                 readyQueue.add(process);
+            else if (process.getProcessState().equals(ProcessState.STARVED))
+                process.setState(ProcessState.BLOCKED);
     }
 
 }
