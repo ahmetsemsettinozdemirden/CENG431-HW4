@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SchedulingAlgorithm {
 
-    List<Process> schedule(List<Process> processes);
+    void schedule(List<Process> processes);
 
 }
