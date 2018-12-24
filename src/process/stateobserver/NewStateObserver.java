@@ -7,7 +7,9 @@ public class NewStateObserver implements Observer {
 
     @Override
     public void update(Observable observable) {
-        observable.setState(ProcessState.NEW);
-    }
 
+        if (observable.getProcessState() == null) {
+            observable.setState(ProcessState.NEW);
+        }
+    }
 }

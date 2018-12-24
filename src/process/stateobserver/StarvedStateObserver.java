@@ -7,6 +7,9 @@ public class StarvedStateObserver implements Observer {
 
     @Override
     public void update(Observable observable) {
-        observable.setState(ProcessState.STARVED); // if waiting time is more than 50
+
+        if (observable.getWaitingTime() > 50) {
+            observable.setState(ProcessState.STARVED);
+        }
     }
 }

@@ -46,27 +46,27 @@ public class Process implements Observable {
         this.processState = processState;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public int getArrivalTime() {
+    public Integer getArrivalTime() {
         return arrivalTime;
     }
 
-    public int getBurstTime() {
+    public Integer getBurstTime() {
         return burstTime;
     }
 
-    public int getCompletionTime() {
+    public Integer getCompletionTime() {
         return completionTime;
     }
 
-    public int getWaitingTime() {
+    public Integer getWaitingTime() {
         return waitingTime;
     }
 
-    public int getPriority() {
+    public Integer getPriority() {
         return priority;
     }
 

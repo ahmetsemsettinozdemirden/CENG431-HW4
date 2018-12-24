@@ -7,7 +7,10 @@ public class ReadyStateObserver implements Observer {
 
     @Override
     public void update(Observable observable) {
-        observable.setState(ProcessState.READY);
+
+        if (observable.getWaitingTime() != null && observable.getWaitingTime() <= 50) {
+            observable.setState(ProcessState.READY);
+        }
     }
 
 }
