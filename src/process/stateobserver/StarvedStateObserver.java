@@ -15,7 +15,7 @@ public class StarvedStateObserver implements Observer {
 
         Process process = (Process) observable;
 
-        if (process.getWaitingTime() > 50) {
+        if (process.getWaitingTime() != null && process.getWaitingTime() > 50) {
             process.setState(ProcessState.STARVED);
         }
     }

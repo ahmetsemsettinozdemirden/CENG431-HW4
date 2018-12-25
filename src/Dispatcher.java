@@ -22,6 +22,7 @@ public class Dispatcher {
             throw new RuntimeException("No such process in the ready queue.");
         Process process = readyQueue.remove(0);
         process.setState(ProcessState.RUNNING);
+        System.out.println("Execution " + process);
         cpu.execute(process);
     }
 
@@ -34,4 +35,7 @@ public class Dispatcher {
                 process.setState(ProcessState.BLOCKED);
     }
 
+    public List<Process> getReadyQueue() {
+        return readyQueue;
+    }
 }

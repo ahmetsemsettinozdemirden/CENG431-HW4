@@ -11,12 +11,12 @@ public class Process implements Observable {
     private int arrivalTime;
     private int burstTime;
     private int completionTime;
-    private int waitingTime;
+    private Integer waitingTime;
     private int priority;
     private ProcessState processState;
     private List<Observer> observers;
 
-    public Process(int id, int arrivalTime, int burstTime, int completionTime, int waitingTime, int priority, ProcessState processState) {
+    public Process(int id, int arrivalTime, int burstTime, int completionTime, Integer waitingTime, int priority, ProcessState processState) {
         this.id = id;
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
@@ -63,7 +63,7 @@ public class Process implements Observable {
         return completionTime;
     }
 
-    public int getWaitingTime() {
+    public Integer getWaitingTime() {
         return waitingTime;
     }
 
@@ -82,8 +82,8 @@ public class Process implements Observable {
 
     @Override
     public String toString() {
-        return "Process{" + "id=" + id + ", arrivalTime=" + arrivalTime + ", burstTime=" + burstTime +
-                ", completionTime=" + completionTime + ", waitingTime=" + waitingTime + ", priority=" + priority +
-                ", processState=" + processState + ", observers=" + observers + "}";
+        return "Process: " + "id=" + id + ", priority=" + priority + ", arrivalTime=" + arrivalTime +
+                ", burstTime=" + burstTime + ", completionTime=" + completionTime + ", waitingTime=" + waitingTime  +
+                ", processState=" + processState;
     }
 }

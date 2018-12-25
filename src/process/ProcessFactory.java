@@ -1,6 +1,11 @@
 package process;
 
-import process.stateobserver.*;
+import process.stateobserver.BlockedStateObserver;
+import process.stateobserver.NewStateObserver;
+import process.stateobserver.ReadyStateObserver;
+import process.stateobserver.RunningStateObserver;
+import process.stateobserver.StarvedStateObserver;
+import process.stateobserver.TerminatedStateObserver;
 
 import java.util.Random;
 
@@ -20,10 +25,9 @@ public class ProcessFactory {
                 random.nextInt(20) + 1,
                 random.nextInt(20) + 1,
                 0,
-                0,
+                null,
                 random.nextInt(10) + 1,
                 null);
-        System.out.println("Create " + process.toString());
         addObservers(process);
         process.notifyObservers();
         return process;
